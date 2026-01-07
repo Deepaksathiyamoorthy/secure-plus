@@ -40,24 +40,26 @@ const Testimonials: React.FC = () => {
                     <h2 className="headline">Trusted by Thousands<br />of Happy Clients</h2>
                 </div>
 
-                <div className="testimonials-grid">
-                    {testimonials.map((testimonial, index) => (
-                        <div className="testimonial-card fade-in-section" key={testimonial.id}>
-                            <div className="rating">
-                                {[...Array(testimonial.rating)].map((_, i) => (
-                                    <span key={i} className="star">★</span>
-                                ))}
-                            </div>
-                            <p className="quote">"{testimonial.quote}"</p>
-                            <div className="author">
-                                <img src={testimonial.image} alt={testimonial.name} className="avatar" />
-                                <div className="info">
-                                    <h4>{testimonial.name}</h4>
-                                    <p>{testimonial.role}</p>
+                <div className="testimonials-scroller">
+                    <div className="testimonial-track">
+                        {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
+                            <div className="testimonial-card fade-in-section" key={`${testimonial.id}-${index}`}>
+                                <div className="rating">
+                                    {[...Array(testimonial.rating)].map((_, i) => (
+                                        <span key={i} className="star">★</span>
+                                    ))}
+                                </div>
+                                <p className="quote">"{testimonial.quote}"</p>
+                                <div className="author">
+                                    <img src={testimonial.image} alt={testimonial.name} className="avatar" />
+                                    <div className="info">
+                                        <h4>{testimonial.name}</h4>
+                                        <p>{testimonial.role}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
