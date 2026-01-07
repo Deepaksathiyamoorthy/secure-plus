@@ -1,11 +1,14 @@
 {
+  "homepage": "https://Deepaksathiyamoorthy.github.io/secure-plus",
   "name": "secure",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -20,5 +23,8 @@
     "sass": "^1.97.2",
     "typescript": "^5.9.3",
     "vite": "^7.3.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
